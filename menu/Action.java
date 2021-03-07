@@ -1,2 +1,5 @@
-package menu;public interface Action {
+package menu;
+
+public interface Action {
+    void execute();
 }
