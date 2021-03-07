@@ -11,7 +11,6 @@ public class Main {
         Ocean ocean = new Ocean();
         MainMenu mainMenu= new MainMenu();
         mainMenu.menu(port,ocean);
-        mainMenu.menu(port,ocean);
-        mainMenu.menu(port,ocean);
+
     }
 }
