@@ -4,7 +4,8 @@ import com.sun.xml.internal.bind.v2.model.nav.Navigator;
 import menu.actions.*;
 
 public class MenuBuilder {
-    public Menu mainMenu;
+    public  Menu mainMenu;
+    public Menu createMenu;
 
     private static MenuBuilder instance;
 
@@ -19,18 +20,28 @@ public class MenuBuilder {
         return instance;
     }
     public void buildMenu() {
+        createMenu = new Menu("Create");
+        createMenuInit();
         mainMenu = new Menu("Main");
         mainMenuInit();
 
         Navigation.getInstance().setCurrentMenu(mainMenu);
     }
     public void mainMenuInit() {
-        mainMenu.getMenuItems().add(new MenuItem("1. Посмотреть сколько воды в порту", null, null, null));
+        mainMenu.getMenuItems().add(new MenuItem("1. Посмотреть сколько воды в порту", new CheckWaterInPort(), null, null));
         mainMenu.getMenuItems().add(new MenuItem("2. Посмотреть список кораблей в порту", null, null, null));
         mainMenu.getMenuItems().add(new MenuItem("3. Удалить корабль из порта", null, null, null));
-        mainMenu.getMenuItems().add(new MenuItem("4. Создать корабль", null, null, null));
+        mainMenu.getMenuItems().add(new MenuItem("4. Создать корабль", null, createMenu, null));
         mainMenu.getMenuItems().add(new MenuItem("5. Посмотреть список кораблей, ожидающих прибытия в порт", null, null, null));
         mainMenu.getMenuItems().add(new MenuItem("6. Загрузить корабль в порт", null, null, null));
         mainMenu.getMenuItems().add(new MenuItem("7. Выйти из программы", new ExitAction(), null, null));
     }
+    public void createMenuInit() {
+        mainMenu = new Menu("Main");
+        mainMenuInit();
+        createMenu.getMenuItems().add(new MenuItem("1. Первая палуба", null, null, null));
+        createMenu.getMenuItems().add(new MenuItem("2. Вторая палуба", null, null, null));
+        createMenu.getMenuItems().add(new MenuItem("3. Выйти из программы", null, null, mainMenu));
+    }
 }
+

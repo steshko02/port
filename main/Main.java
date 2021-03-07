@@ -3,7 +3,6 @@ package main;
 import com.elenemts.Ocean;
 import com.elenemts.Port;
 import construction.Initializer;
-import menu.MainMenu;
 
 public class Main {
 

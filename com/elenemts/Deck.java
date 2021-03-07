@@ -3,7 +3,17 @@ import java.util.ArrayList;
 
 public class Deck {
     private ArrayList<Container> content = new ArrayList<>();
+
+    public int getMAX_VOLUME() {
+        return MAX_VOLUME;
+    }
+
     private final int MAX_VOLUME = 1000;
+
+    public void setWater(int water) {
+        this.water = water;
+    }
+
     private  int water=0;
 
     public int getWater() {
@@ -27,25 +37,25 @@ public class Deck {
        return str ;
     }
 
-    public void clear ()
-    {
-        content.clear();
-    }
-
-    public void addConteiner(Container container)
-    {
-        if(!checkSize(container)) {
-           return;
-        }
-        content.add(container);
-        water+=container.getVolume();
-    }
-
-    public Boolean checkSize(Container container)
-    {
-        if((container.getVolume()+water) > MAX_VOLUME){
-            return false;
-        }
-        return true;
-    }
+//    public void clear ()
+//    {
+//        content.clear();
+//    }
+//
+//    public void addConteiner(Container container)
+//    {
+//        if(!checkSize(container)) {
+//           return;
+//        }
+//        content.add(container);
+//        water+=container.getVolume();
+//    }
+//
+//    public Boolean checkSize(Container container)
+//    {
+//        if((container.getVolume()+water) > MAX_VOLUME){
+//            return false;
+//        }
+//        return true;
+//    }
 }

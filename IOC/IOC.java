@@ -13,13 +13,13 @@ public class IOC {
         System.out.println("ПОРТ:\n");
         System.out.print(port.toString());
     }
-    public static  boolean tryInputShipName(String shipName, Ocean ocean)
-    {
-        if(ocean.searchByName(shipName)!=null){
-            return  false;
-        }
-        return true;
-    }
+//    public static  boolean tryInputShipName(String shipName, Ocean ocean)
+//    {
+//        if(ocean.searchByName(shipName)!=null){
+//            return  false;
+//        }
+//        return true;
+//    }
 
 }
 
