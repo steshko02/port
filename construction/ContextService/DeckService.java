@@ -5,16 +5,15 @@ import com.elenemts.Deck;
 import com.elenemts.Ocean;
 
 public class DeckService {
-    private  Deck deck;
+    //private  Deck deck;
 
-    public void clear ()
-    {
+    public static void clear (Deck deck) {
         deck.getContent().clear();
     }
 
-    public void addConteiner(Container container)
+    public static void addContainer(Deck deck,Container container)
     {
-        if(!checkSize(container)) {
+        if(container.getVolume()+deck.getWater() > deck.getMAX_VOLUME()) {
             return;
         }
         int water=0;
@@ -23,11 +22,8 @@ public class DeckService {
         deck.setWater(water);
     }
 
-    public Boolean checkSize(Container container)
+    public static Boolean checkSize(Deck deck,Container container)
     {
-        if((container.getVolume()+deck.getWater()) > deck.getMAX_VOLUME()){
-            return false;
-        }
-        return true;
+        return (container.getVolume() + deck.getWater()) <= deck.getMAX_VOLUME();
     }
 }

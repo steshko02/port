@@ -16,7 +16,7 @@ public class PortService {
 
 
     public  PortService(Port port) {
-        this.port = port;
+        PortService.port = port;
     }
     public  static boolean tryaddShip(int index, Ship ship) {
 
@@ -41,8 +41,10 @@ public class PortService {
         }
         int water=0;
         for (int i=0;i<2;i++) {
-            water +=  port.getPortShips()[index].content[i].getWater();
-            port.getPortShips()[index].content[i].getContent().clear();
+            for (int j=0;j<2;j++){
+            water +=  port.getPortShips()[index].content[j].getWater();
+           // port.getPortShips()[index].content[j].getContent().clear();
+            }
         }
         port.setWater(water);
     }

@@ -29,11 +29,11 @@ public class MenuBuilder {
     }
     public void mainMenuInit() {
         mainMenu.getMenuItems().add(new MenuItem("1. Посмотреть сколько воды в порту", new CheckWaterInPort(), null, null));
-        mainMenu.getMenuItems().add(new MenuItem("2. Посмотреть список кораблей в порту", null, null, null));
-        mainMenu.getMenuItems().add(new MenuItem("3. Удалить корабль из порта", null, null, null));
-        mainMenu.getMenuItems().add(new MenuItem("4. Создать корабль", null, createMenu, null));
-        mainMenu.getMenuItems().add(new MenuItem("5. Посмотреть список кораблей, ожидающих прибытия в порт", null, null, null));
-        mainMenu.getMenuItems().add(new MenuItem("6. Загрузить корабль в порт", null, null, null));
+        mainMenu.getMenuItems().add(new MenuItem("2. Посмотреть список кораблей в порту", new CheckShipsInPort(), null, null));
+        mainMenu.getMenuItems().add(new MenuItem("3. Удалить корабль из порта", new DeleteShipFromPort(), null, null));
+        mainMenu.getMenuItems().add(new MenuItem("4. Создать корабль", new CreateShip(), createMenu, null));
+        mainMenu.getMenuItems().add(new MenuItem("5. Посмотреть список кораблей, ожидающих прибытия в порт", new OceanShips(), null, null));
+        mainMenu.getMenuItems().add(new MenuItem("6. Загрузить корабль в порт", new AddShipToPort(), null, null));
         mainMenu.getMenuItems().add(new MenuItem("7. Выйти из программы", new ExitAction(), null, null));
     }
     public void createMenuInit() {

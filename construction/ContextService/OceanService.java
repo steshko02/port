@@ -4,6 +4,9 @@ import com.elenemts.Ocean;
 import com.elenemts.Ship;
 
 public class OceanService {
+
+    private static Ocean ocean;
+
     public static Ocean getOcean() {
         return ocean;
     }
@@ -12,10 +15,8 @@ public class OceanService {
         OceanService.ocean = ocean;
     }
 
-    private static Ocean ocean;
-
     public OceanService(Ocean ocean) {
-        this.ocean = ocean;
+        OceanService.ocean = ocean;
     }
 
     public static void addShip(Ship ship)
