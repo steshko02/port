@@ -8,13 +8,13 @@ public class Deck {
         return MAX_VOLUME;
     }
 
+    private  int water=0;
+
     private final int MAX_VOLUME = 1000;
 
     public void setWater(int water) {
         this.water = water;
     }
-
-    private  int water=0;
 
     public int getWater() {
         return water;
@@ -30,32 +30,10 @@ public class Deck {
 
     @Override
     public String toString() {
-       String str="";
-       for(int i = 0; i<content.size(); i++){
-           str += (" |" +content.get(i).toString()+"| "); // mb toString ne nado
-       }
-       return str ;
+       StringBuilder str= new StringBuilder();
+        for (Container container : content) {
+            str.append(" |").append(container.toString()).append("| ");
+        }
+       return str.toString();
     }
-
-//    public void clear ()
-//    {
-//        content.clear();
-//    }
-//
-//    public void addConteiner(Container container)
-//    {
-//        if(!checkSize(container)) {
-//           return;
-//        }
-//        content.add(container);
-//        water+=container.getVolume();
-//    }
-//
-//    public Boolean checkSize(Container container)
-//    {
-//        if((container.getVolume()+water) > MAX_VOLUME){
-//            return false;
-//        }
-//        return true;
-//    }
 }

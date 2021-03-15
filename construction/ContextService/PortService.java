@@ -1,5 +1,6 @@
 package construction.ContextService;
 
+import com.elenemts.Container;
 import com.elenemts.Port;
 import com.elenemts.Ship;
 
@@ -41,9 +42,9 @@ public class PortService {
         }
         int water=0;
         for (int i=0;i<2;i++) {
-            for (int j=0;j<2;j++){
-            water +=  port.getPortShips()[index].content[j].getWater();
-           // port.getPortShips()[index].content[j].getContent().clear();
+            for (Container container : port.getPortShips()[index].content[i].getContent()){
+            water += container.getVolume();
+           // port.getPortShips()[index].content[i].getContent().clear();
             }
         }
         port.setWater(water);

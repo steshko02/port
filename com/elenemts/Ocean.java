@@ -13,40 +13,19 @@ public class Ocean {
     public ArrayList<Ship> getOceanShips() {
         return oceanShips;
     }
-//    public void addShip(Ship ship)
-//    {
-//        oceanShips.add(ship);
-//    }
 //
-//    public void removeShip(Ship ship)
-//    {
-//        oceanShips.remove(ship);
-//    }
-//
-//        public Ship searchByName(String name)
-//        {
-//            for(int i = 0; i<oceanShips.size(); i++)
-//            {
-//                if(oceanShips.get(i).getName().equals(name))
-//                {
-//                    return oceanShips.get(i);
-//                }
-//            }
-//        return null;
-//    }
-
     @Override
     public String toString() {
 
-        String str="";
+        StringBuilder str= new StringBuilder();
         for (int i=0; i<oceanShips.size(); i++) {
             if(oceanShips.get(i)== null) {
-                str+=(i+1)+" - free"+"\n";
+                str.append(i + 1).append(" - free").append("\n");
             }
             else{
-                str+= (i+1)+" "+oceanShips.get(i).toString()+"\n";
+                str.append(i + 1).append(" ").append(oceanShips.get(i).toString()).append("\n");
             }
         }
-        return  str;
+        return str.toString();
     }
 }

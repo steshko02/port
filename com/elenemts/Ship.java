@@ -21,11 +21,11 @@ public class Ship {
 
     @Override
     public String toString() {
-        String str= name+"\n";
+        StringBuilder str= new StringBuilder(name + "\n");
         for (int i=0; i<content.length; i++) {
-            str+= "\t"+(i+1)+" :"+content[i].toString()+"\n";
+            str.append("\t").append(i + 1).append(" :").append(content[i].toString()).append("\n");
         }
-        return  str;
+        return str.toString();
     }
 
 
