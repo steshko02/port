@@ -44,10 +44,14 @@ public class Navigation {
 
         MenuItem menuChoice = currentMenu.getMenuItems().get(index);
 
-        if (menuChoice.getAction() == null) {
+        if (menuChoice.getAction() == null || (menuChoice.getAction() != null && (menuChoice.getNextMenu() != null || menuChoice.getPreviousMenu() != null))) {
             if (menuChoice.getNextMenu() == null) {
                 this.setCurrentMenu(getCurrentMenu().getMenuItems().get(index).getPreviousMenu());
-            } else {
+            }else if(menuChoice.getAction() != null && menuChoice.getNextMenu() != null){
+                menuChoice.executeAction();
+                this.setCurrentMenu(getCurrentMenu().getMenuItems().get(index).getNextMenu());
+            }
+            else {
                 this.setCurrentMenu(getCurrentMenu().getMenuItems().get(index).getNextMenu());
             }
         } else {

@@ -39,9 +39,11 @@ public class MenuBuilder {
     public void createMenuInit() {
         mainMenu = new Menu("Main");
         mainMenuInit();
-        createMenu.getMenuItems().add(new MenuItem("1. Первая палуба", null, null, null));
-        createMenu.getMenuItems().add(new MenuItem("2. Вторая палуба", null, null, null));
-        createMenu.getMenuItems().add(new MenuItem("3. Выйти из программы", null, null, mainMenu));
+        createMenu.getMenuItems().add(new MenuItem("1. Первая палуба", new FillFirstDeck(), null, null));
+        createMenu.getMenuItems().add(new MenuItem("2. Вторая палуба", new FillSecondDeck(), null, null));
+        createMenu.getMenuItems().add(new MenuItem("3. Выйти из программы", new ExitToPreviousMenu(), null, mainMenu));
+       // Navigation.getInstance().setCurrentMenu(createMenu);
     }
+
 }
 

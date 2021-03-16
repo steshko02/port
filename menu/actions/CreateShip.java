@@ -19,7 +19,7 @@ public class CreateShip implements Action {
                 if(OceanService.searchByName(shipName)==null){
                   Ship ship = new Ship(shipName);
                   OceanService.addShip(ship);
-                    createShip(OceanService.getOcean().getOceanShips().get(OceanService.getOcean().getOceanShips().size()-1));
+                  //  createShip(OceanService.getOcean().getOceanShips().get(OceanService.getOcean().getOceanShips().size()-1));
                 }
                 else{
                     System.out.println("Корабль с таким именем уже существует. Повторите операцию.");
